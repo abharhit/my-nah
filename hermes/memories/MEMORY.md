@@ -4,7 +4,7 @@ Every new session: default cwd is /home/runner/h-dashboard, and always use CodeG
 §
 Boost MCP occasionally dies on first stdio call ("lost its stdio subprocess") — just call it again. CLI fallback always works: php scripts/boost_tool.php <tool> '<json>'.
 §
-h-dashboard branch rebecca tracks origin/beta (branch.rebecca.merge=refs/heads/beta), so `git status` shows 'rebecca...origin/beta'; always use explicit refspecs HEAD:refs/heads/rebecca.
+h-dashboard branch nahal tracks origin/beta (branch.nahal.merge=refs/heads/beta), so `git status` shows 'nahal...origin/beta'; always use explicit refspecs HEAD:refs/heads/nahal.
 §
 MaryUI x-select defaults to optionValue='id'/optionLabel='name'. Options keyed 'value'/'label' need explicit option-value="value" option-label="label" or every <option> renders empty (blank control). Pass :options="$this->myOptions()" from a component method — a bare $myOptions is undefined in the Blade view.
 §
