@@ -17,7 +17,10 @@ Any session touching `/home/runner/h-dashboard`: new feature, bug fix, refactor,
 or a plain structural question about the code. Run sections 1-5 before real work.
 
 Repo: `/home/runner/h-dashboard` (also the configured Hermes `terminal.cwd`).
-Branch: `rebecca`. Canonical upstream: `asgarimehdi/h-dashboard`, branch `beta`.
+Do **not** hardcode a branch name here — it changes per server. Read it every session with
+`git branch --show-current` (this server: `nahal`, tracking `origin/beta`; commit with an explicit
+`HEAD:refs/heads/<branch>` refspec).
+Canonical upstream: `asgarimehdi/h-dashboard`, branch `beta`.
 Only remote is `origin` (this server's fork); **never add, rename, or delete remotes.**
 
 ## 1. Never
