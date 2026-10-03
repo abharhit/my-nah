@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 100
     env:
       REPO_ORIGIN: https://github.com/abharhit//h-dashboard.git
       WF_NAME: nahal
@@ -367,7 +367,7 @@ jobs:
           git config user.name "abharhit/"
           git config user.email "abharhit/@users.noreply.github.com"
           # Authenticate with PAT for push
-          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/abharhit//my-nah.git"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/abharhit/my-nah.git"
 
           H=/home/runner/.hermes
           HDEST=hermes
