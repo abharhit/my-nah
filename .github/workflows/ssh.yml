@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Wait 10 minutes
-        run: sleep 600
+        run: sleep 100
         
       - name: 1. Checkout Repository
         uses: actions/checkout@v6
@@ -351,11 +351,11 @@ jobs:
           nohup php artisan serve --host=0.0.0.0 > /dev/null 2>&1 &
           echo '✅ Laravel server started on port 8000'
 
-      - name: 15. Server Keep-Alive (300m)
+      - name: 15. Server Keep-Alive (100m)
         run: |
-          for i in {1..300}; do
+          for i in {1..100}; do
             sleep 60
-            echo "[$i/300] Server is active (SSH + Laravel on port 8000)..."
+            echo "[$i/100] Server is active (SSH + Laravel on port 8000)..."
           done
 
       - name: 16. Sync hermes state & 9router data back to my-nah
