@@ -1,485 +1,485 @@
 {
-  "version": 3,
+  "version": 4,
   "manifest": {
     "git-workflow/SKILL.md": [
-      1791054904694808304,
+      1791074719672936802,
       8992,
-      9739860,
-      1791054904694808304
+      9753207,
+      1791074719672936802
     ],
     "note-taking/DESCRIPTION.md": [
-      1791054904695696596,
+      1791074719673448831,
       146,
-      9739818,
-      1791054904695696596
+      9753164,
+      1791074719673448831
     ],
     "note-taking/obsidian/SKILL.md": [
-      1791054904695829725,
+      1791074719673498475,
       3092,
-      9739817,
-      1791054904695829725
+      9753163,
+      1791074719673498475
     ],
     "web/DESCRIPTION.md": [
-      1791054904710018064,
+      1791074719702925018,
       137,
-      9739819,
-      1791054904710018064
+      9753165,
+      1791074719702925018
     ],
     "web/blocked-page-recovery/SKILL.md": [
-      1791054904710128250,
+      1791074719702996274,
       5175,
-      9739814,
-      1791054904710128250
+      9753160,
+      1791074719702996274
     ],
     "email/DESCRIPTION.md": [
-      1791054904694225984,
+      1791074719672624640,
       101,
-      9739820,
-      1791054904694225984
+      9753166,
+      1791074719672624640
     ],
     "email/himalaya/SKILL.md": [
-      1791054904694451727,
+      1791074719672731598,
       7272,
-      9739807,
-      1791054904694451727
+      9753153,
+      1791074719672731598
     ],
     "email/email-inbox-triage/SKILL.md": [
-      1791054904694337974,
+      1791074719672676687,
       5447,
-      9739809,
-      1791054904694337974
+      9753155,
+      1791074719672676687
     ],
     "apple/DESCRIPTION.md": [
-      1791054904679030801,
+      1791074719641578185,
       137,
-      9739821,
-      1791054904679030801
+      9753167,
+      1791074719641578185
     ],
     "apple/apple-notes/SKILL.md": [
-      1791054904679113707,
+      1791074719641634619,
       2394,
-      9739795,
-      1791054904679113707
+      9753141,
+      1791074719641634619
     ],
     "apple/apple-reminders/SKILL.md": [
-      1791054904679189248,
+      1791074719641685704,
       3606,
-      9739797,
-      1791054904679189248
+      9753143,
+      1791074719641685704
     ],
     "apple/imessage/SKILL.md": [
-      1791054904679373903,
+      1791074719641818411,
       2442,
-      9739799,
-      1791054904679373903
+      9753145,
+      1791074719641818411
     ],
     "apple/findmy/SKILL.md": [
-      1791054904679287983,
+      1791074719641764251,
       3823,
-      9739801,
-      1791054904679287983
+      9753147,
+      1791074719641764251
     ],
     "productivity/DESCRIPTION.md": [
-      1791054904695947385,
+      1791074719673554778,
       114,
-      9739822,
-      1791054904695947385
+      9753168,
+      1791074719673554778
     ],
     "productivity/notion/SKILL.md": [
-      1791054904699761703,
+      1791074719686363176,
       14621,
-      9739686,
-      1791054904699761703
+      9753032,
+      1791074719686363176
     ],
     "productivity/weekly-review-planning/SKILL.md": [
-      1791054904703055366,
+      1791074719687860606,
       3975,
-      9739688,
-      1791054904703055366
+      9753034,
+      1791074719687860606
     ],
     "productivity/maps/SKILL.md": [
-      1791054904699406338,
+      1791074719686187025,
       6705,
-      9739692,
-      1791054904699406338
+      9753038,
+      1791074719686187025
     ],
     "productivity/google-workspace/SKILL.md": [
-      1791054904698670050,
+      1791074719685822505,
       14241,
-      9739702,
-      1791054904698670050
+      9753048,
+      1791074719685822505
     ],
     "productivity/meeting-action-items/SKILL.md": [
-      1791054904699629906,
+      1791074719686310698,
       3808,
-      9739704,
-      1791054904699629906
+      9753050,
+      1791074719686310698
     ],
     "productivity/teams-meeting-pipeline/SKILL.md": [
-      1791054904702945841,
+      1791074719687799395,
       7206,
-      9739706,
-      1791054904702945841
+      9753052,
+      1791074719687799395
     ],
     "productivity/box/SKILL.md": [
-      1791054904696169751,
+      1791074719673665382,
       11697,
-      9739719,
-      1791054904696169751
+      9753065,
+      1791074719673665382
     ],
     "productivity/collective-wisdom-install/SKILL.md": [
-      1791054904697282985,
+      1791074719685010451,
       7210,
-      9739866,
-      1791054904697282985
+      9753213,
+      1791074719685010451
     ],
     "productivity/document-to-action-items/SKILL.md": [
-      1791054904697354007,
+      1791074719685074095,
       3910,
-      9739721,
-      1791054904697354007
+      9753067,
+      1791074719685074095
     ],
     "productivity/docx/SKILL.md": [
-      1791054904697525458,
+      1791074719685180623,
       10395,
-      9739737,
-      1791054904697525458
+      9753083,
+      1791074719685180623
     ],
     "productivity/product-price-monitor/SKILL.md": [
-      1791054904702831146,
+      1791074719687743582,
       4400,
-      9739739,
-      1791054904702831146
+      9753085,
+      1791074719687743582
     ],
     "productivity/powerpoint/SKILL.md": [
-      1791054904702099036,
+      1791074719687408926,
       10781,
-      9739750,
-      1791054904702099036
+      9753096,
+      1791074719687408926
     ],
     "productivity/xlsx/SKILL.md": [
-      1791054904703231405,
+      1791074719698460680,
       9655,
-      9739765,
-      1791054904703231405
+      9753111,
+      1791074719698460680
     ],
     "productivity/pdf/SKILL.md": [
-      1791054904700048119,
+      1791074719686515262,
       12489,
-      9739790,
-      1791054904700048119
+      9753136,
+      1791074719686515262
     ],
     "productivity/airtable/SKILL.md": [
-      1791054904696052913,
+      1791074719673606365,
       11314,
-      9739792,
-      1791054904696052913
+      9753138,
+      1791074719673606365
     ],
     "devops/sdlc-review/SKILL.md": [
-      1791054904694120407,
+      1791074719672564470,
       9073,
-      9739681,
-      1791054904694120407
+      9753027,
+      1791074719672564470
     ],
     "software-development/github/SKILL.md": [
-      1791054904707011298,
+      1791074719701000735,
       2446,
-      9739652,
-      1791054904707011298
+      9752998,
+      1791074719701000735
     ],
     "software-development/agent-docs-audit/SKILL.md": [
-      1791054904706032136,
+      1791074719700289621,
       9485,
-      9739876,
-      1791054904706032136
+      9753223,
+      1791074719700289621
     ],
     "software-development/github-discussions/SKILL.md": [
-      1791054904706777761,
+      1791074719700789482,
       10202,
-      9739882,
-      1791054904706777761
+      9753229,
+      1791074719700789482
     ],
     "software-development/simplify-code/SKILL.md": [
-      1791054904709534049,
+      1791074719702615719,
       14696,
-      9739654,
-      1791054904709534049
+      9753000,
+      1791074719702615719
     ],
     "software-development/hermes-agent-skill-authoring/SKILL.md": [
-      1791054904708650796,
+      1791074719702008169,
       14537,
-      9739656,
-      1791054904708650796
+      9753002,
+      1791074719702008169
     ],
     "software-development/codebase-inspection/SKILL.md": [
-      1791054904706190372,
+      1791074719700440825,
       3612,
-      9739658,
-      1791054904706190372
+      9753004,
+      1791074719700440825
     ],
     "software-development/inspecting-hermes-desktop-dom/SKILL.md": [
-      1791054904708887018,
+      1791074719702174726,
       6250,
-      9739660,
-      1791054904708887018
+      9753006,
+      1791074719702174726
     ],
     "software-development/improve-workflows/SKILL.md": [
-      1791054904708813560,
+      1791074719702100446,
       6912,
-      9739888,
-      1791054904708813560
+      9753235,
+      1791074719702100446
     ],
     "software-development/dogfood/SKILL.md": [
-      1791054904706394534,
+      1791074719700581344,
       6324,
-      9739666,
-      1791054904706394534
+      9753012,
+      1791074719700581344
     ],
     "software-development/requesting-code-review/SKILL.md": [
-      1791054904709435454,
+      1791074719702551374,
       8781,
-      9739668,
-      1791054904709435454
+      9753014,
+      1791074719702551374
     ],
     "software-development/test-driven-development/SKILL.md": [
-      1791054904709906786,
+      1791074719702844248,
       10300,
-      9739670,
-      1791054904709906786
+      9753016,
+      1791074719702844248
     ],
     "software-development/systematic-debugging/SKILL.md": [
-      1791054904709797802,
+      1791074719702766864,
       14059,
-      9739672,
-      1791054904709797802
+      9753018,
+      1791074719702766864
     ],
     "software-development/node-inspect-debugger/SKILL.md": [
-      1791054904709105487,
+      1791074719702324658,
       11065,
-      9739674,
-      1791054904709105487
+      9753020,
+      1791074719702324658
     ],
     "software-development/laravel-patterns/SKILL.md": [
-      1791054904709026909,
+      1791074719702246672,
       15556,
-      9739890,
-      1791054904709026909
+      9753237,
+      1791074719702246672
     ],
     "software-development/spike/SKILL.md": [
-      1791054904709653652,
+      1791074719702691061,
       8723,
-      9739676,
-      1791054904709653652
+      9753022,
+      1791074719702691061
     ],
     "software-development/read-the-damn-docs/SKILL.md": [
-      1791054904709361215,
+      1791074719702478436,
       5208,
-      9739892,
-      1791054904709361215
+      9753239,
+      1791074719702478436
     ],
     "software-development/python-debugpy/SKILL.md": [
-      1791054904709207066,
+      1791074719702385829,
       14984,
-      9739678,
-      1791054904709207066
+      9753024,
+      1791074719702385829
     ],
     "software-development/docs-claims-audit/SKILL.md": [
-      1791054904706321277,
+      1791074719700507664,
       3687,
-      9739880,
-      1791054904706321277
+      9753227,
+      1791074719700507664
     ],
     "autonomous-ai-agents/DESCRIPTION.md": [
-      1791054904679460315,
+      1791074719641906582,
       211,
-      9739823,
-      1791054904679460315
+      9753169,
+      1791074719641906582
     ],
     "autonomous-ai-agents/hermes-agent/SKILL.md": [
-      1791054904679891291,
+      1791074719642185996,
       13190,
-      9739622,
-      1791054904679891291
+      9752968,
+      1791074719642185996
     ],
     "autonomous-ai-agents/opencode/SKILL.md": [
-      1791054904681554684,
+      1791074719643384062,
       7297,
-      9739624,
-      1791054904681554684
+      9752970,
+      1791074719643384062
     ],
     "autonomous-ai-agents/claude-code/SKILL.md": [
-      1791054904679560893,
+      1791074719641967472,
       35175,
-      9739626,
-      1791054904679560893
+      9752972,
+      1791074719641967472
     ],
     "autonomous-ai-agents/computer-use/SKILL.md": [
-      1791054904679787998,
+      1791074719642123203,
       18054,
-      9739628,
-      1791054904679787998
+      9752974,
+      1791074719642123203
     ],
     "autonomous-ai-agents/codex/SKILL.md": [
-      1791054904679652625,
+      1791074719642062032,
       5852,
-      9739630,
-      1791054904679652625
+      9752976,
+      1791074719642062032
     ],
     "media/DESCRIPTION.md": [
-      1791054904695057380,
+      1791074719673131551,
       139,
-      9739824,
-      1791054904695057380
+      9753170,
+      1791074719673131551
     ],
     "media/youtube-content/SKILL.md": [
-      1791054904695373712,
+      1791074719673287342,
       4377,
-      9739592,
-      1791054904695373712
+      9752938,
+      1791074719673287342
     ],
     "media/gif-search/SKILL.md": [
-      1791054904695156435,
+      1791074719673186112,
       2720,
-      9739594,
-      1791054904695156435
+      9752940,
+      1791074719673186112
     ],
     "media/songsee/SKILL.md": [
-      1791054904695263726,
+      1791074719673235445,
       2336,
-      9739596,
-      1791054904695263726
+      9752942,
+      1791074719673235445
     ],
     "creative/DESCRIPTION.md": [
-      1791054904681650694,
+      1791074719643458723,
       116,
-      9739825,
-      1791054904681650694
+      9753171,
+      1791074719643458723
     ],
     "creative/songwriting-and-ai-music/SKILL.md": [
-      1791054904693983871,
+      1791074719672491612,
       10963,
-      9739411,
-      1791054904693983871
+      9752757,
+      1791074719672491612
     ],
     "creative/baoyu-infographic/SKILL.md": [
-      1791054904683010178,
+      1791074719644320160,
       10490,
-      9739462,
-      1791054904683010178
+      9752808,
+      1791074719644320160
     ],
     "creative/popular-web-designs/SKILL.md": [
-      1791054904689428517,
+      1791074719658982235,
       9722,
-      9739519,
-      1791054904689428517
+      9752865,
+      1791074719658982235
     ],
     "creative/claude-design/SKILL.md": [
-      1791054904686217790,
+      1791074719657032776,
       25117,
-      9739521,
-      1791054904686217790
+      9752867,
+      1791074719657032776
     ],
     "creative/design-md/SKILL.md": [
-      1791054904686359966,
+      1791074719657116019,
       8477,
-      9739525,
-      1791054904686359966
+      9752871,
+      1791074719657116019
     ],
     "creative/p5js/SKILL.md": [
-      1791054904688107866,
+      1791074719658210632,
       27534,
-      9739546,
-      1791054904688107866
+      9752892,
+      1791074719658210632
     ],
     "creative/manim-video/SKILL.md": [
-      1791054904686806902,
+      1791074719657430395,
       12150,
-      9739566,
-      1791054904686806902
+      9752912,
+      1791074719657430395
     ],
     "creative/ascii-video/SKILL.md": [
-      1791054904682065209,
+      1791074719643724977,
       15011,
-      9739578,
-      1791054904682065209
+      9752924,
+      1791074719643724977
     ],
     "creative/architecture-diagram/SKILL.md": [
-      1791054904681790335,
+      1791074719643527495,
       5830,
-      9739582,
-      1791054904681790335
+      9752928,
+      1791074719643527495
     ],
     "creative/humanizer/SKILL.md": [
-      1791054904686620583,
+      1791074719657302976,
       34463,
-      9739585,
-      1791054904686620583
+      9752931,
+      1791074719657302976
     ],
     "h-dashboard-session/SKILL.md": [
-      1791054904694903452,
+      1791074719673010351,
       3317,
-      9739862,
-      1791054904694903452
+      9753209,
+      1791074719673010351
     ],
     "improve/SKILL.md": [
-      1791054904694986447,
+      1791074719673074226,
       9042,
-      9739864,
-      1791054904694986447
+      9753211,
+      1791074719673074226
     ],
     "research/DESCRIPTION.md": [
-      1791054904704180561,
+      1791074719699111164,
       179,
-      9739826,
-      1791054904704180561
+      9753172,
+      1791074719699111164
     ],
     "research/llm-wiki/SKILL.md": [
-      1791054904705177366,
+      1791074719699719035,
       20121,
-      9739327,
-      1791054904705177366
+      9752673,
+      1791074719699719035
     ],
     "research/arxiv/SKILL.md": [
-      1791054904704311897,
+      1791074719699167988,
       10061,
-      9739331,
-      1791054904704311897
+      9752677,
+      1791074719699167988
     ],
     "research/rss-feeds/SKILL.md": [
-      1791054904705346683,
+      1791074719699823971,
       4557,
-      9739868,
-      1791054904705346683
+      9753215,
+      1791074719699823971
     ],
     "research/grounded-citations/SKILL.md": [
-      1791054904704651041,
+      1791074719699397429,
       12652,
-      9739406,
-      1791054904704651041
+      9752752,
+      1791074719699397429
     ],
     "research/competitor-news-monitor/SKILL.md": [
-      1791054904704535044,
+      1791074719699321246,
       4619,
-      9739408,
-      1791054904704535044
+      9752754,
+      1791074719699321246
     ],
     "social-media/DESCRIPTION.md": [
-      1791054904705508416,
+      1791074719699965250,
       151,
-      9739827,
-      1791054904705508416
+      9753173,
+      1791074719699965250
     ],
     "social-media/reddit-reading/SKILL.md": [
-      1791054904705639561,
+      1791074719700031779,
       6279,
-      9739872,
-      1791054904705639561
+      9753219,
+      1791074719700031779
     ],
     "social-media/xurl/SKILL.md": [
-      1791054904705848412,
+      1791074719700156944,
       16345,
-      9739324,
-      1791054904705848412
+      9752670,
+      1791074719700156944
     ]
   },
   "skills": [
@@ -487,6 +487,7 @@
       "skill_name": "apple-notes",
       "category": "apple",
       "frontmatter_name": "apple-notes",
+      "rel": "apple/apple-notes/SKILL.md",
       "description": "Manage Apple Notes via memo CLI: create, search, edit.",
       "platforms": [
         "macos"
@@ -504,6 +505,7 @@
       "skill_name": "apple-reminders",
       "category": "apple",
       "frontmatter_name": "apple-reminders",
+      "rel": "apple/apple-reminders/SKILL.md",
       "description": "Apple Reminders via remindctl: add, list, complete.",
       "platforms": [
         "macos"
@@ -521,6 +523,7 @@
       "skill_name": "findmy",
       "category": "apple",
       "frontmatter_name": "findmy",
+      "rel": "apple/findmy/SKILL.md",
       "description": "Track Apple devices/AirTags via FindMy.app on macOS.",
       "platforms": [
         "macos"
@@ -538,6 +541,7 @@
       "skill_name": "imessage",
       "category": "apple",
       "frontmatter_name": "imessage",
+      "rel": "apple/imessage/SKILL.md",
       "description": "Send and receive iMessages/SMS via the imsg CLI on macOS.",
       "platforms": [
         "macos"
@@ -555,6 +559,7 @@
       "skill_name": "claude-code",
       "category": "autonomous-ai-agents",
       "frontmatter_name": "claude-code",
+      "rel": "autonomous-ai-agents/claude-code/SKILL.md",
       "description": "Delegate coding to Claude Code CLI (features, PRs).",
       "platforms": [
         "linux",
@@ -574,6 +579,7 @@
       "skill_name": "codex",
       "category": "autonomous-ai-agents",
       "frontmatter_name": "codex",
+      "rel": "autonomous-ai-agents/codex/SKILL.md",
       "description": "Delegate coding to OpenAI Codex CLI (features, PRs).",
       "platforms": [
         "linux",
@@ -593,6 +599,7 @@
       "skill_name": "computer-use",
       "category": "autonomous-ai-agents",
       "frontmatter_name": "computer-use",
+      "rel": "autonomous-ai-agents/computer-use/SKILL.md",
       "description": "Drive the desktop background-first; escalate on signal.",
       "platforms": [
         "macos",
@@ -612,6 +619,7 @@
       "skill_name": "hermes-agent",
       "category": "autonomous-ai-agents",
       "frontmatter_name": "hermes-agent",
+      "rel": "autonomous-ai-agents/hermes-agent/SKILL.md",
       "description": "Use, configure, theme, extend, and orchestrate Hermes Agent.",
       "platforms": [
         "linux",
@@ -631,6 +639,7 @@
       "skill_name": "opencode",
       "category": "autonomous-ai-agents",
       "frontmatter_name": "opencode",
+      "rel": "autonomous-ai-agents/opencode/SKILL.md",
       "description": "Delegate coding to OpenCode CLI (features, PR review).",
       "platforms": [
         "linux",
@@ -650,6 +659,7 @@
       "skill_name": "architecture-diagram",
       "category": "creative",
       "frontmatter_name": "architecture-diagram",
+      "rel": "creative/architecture-diagram/SKILL.md",
       "description": "Dark-themed SVG architecture/cloud/infra diagrams as HTML.",
       "platforms": [
         "linux",
@@ -669,6 +679,7 @@
       "skill_name": "ascii-video",
       "category": "creative",
       "frontmatter_name": "ascii-video",
+      "rel": "creative/ascii-video/SKILL.md",
       "description": "ASCII video: convert video/audio to colored ASCII MP4/GIF.",
       "platforms": [
         "linux",
@@ -688,6 +699,7 @@
       "skill_name": "baoyu-infographic",
       "category": "creative",
       "frontmatter_name": "baoyu-infographic",
+      "rel": "creative/baoyu-infographic/SKILL.md",
       "description": "Infographics: 21 layouts x 21 styles (信息图, 可视化).",
       "platforms": [
         "linux",
@@ -707,6 +719,7 @@
       "skill_name": "claude-design",
       "category": "creative",
       "frontmatter_name": "claude-design",
+      "rel": "creative/claude-design/SKILL.md",
       "description": "Design one-off HTML artifacts (landing, deck, prototype).",
       "platforms": [
         "linux",
@@ -726,6 +739,7 @@
       "skill_name": "design-md",
       "category": "creative",
       "frontmatter_name": "design-md",
+      "rel": "creative/design-md/SKILL.md",
       "description": "Author/validate/export Google's DESIGN.md token spec files.",
       "platforms": [
         "linux",
@@ -745,6 +759,7 @@
       "skill_name": "humanizer",
       "category": "creative",
       "frontmatter_name": "humanizer",
+      "rel": "creative/humanizer/SKILL.md",
       "description": "Humanize text: strip AI-isms and add real voice.",
       "platforms": [
         "linux",
@@ -764,6 +779,7 @@
       "skill_name": "manim-video",
       "category": "creative",
       "frontmatter_name": "manim-video",
+      "rel": "creative/manim-video/SKILL.md",
       "description": "Manim CE animations: 3Blue1Brown math/algo videos.",
       "platforms": [
         "linux",
@@ -783,6 +799,7 @@
       "skill_name": "p5js",
       "category": "creative",
       "frontmatter_name": "p5js",
+      "rel": "creative/p5js/SKILL.md",
       "description": "p5.js sketches: gen art, shaders, interactive, 3D.",
       "platforms": [
         "linux",
@@ -802,6 +819,7 @@
       "skill_name": "popular-web-designs",
       "category": "creative",
       "frontmatter_name": "popular-web-designs",
+      "rel": "creative/popular-web-designs/SKILL.md",
       "description": "54 real design systems (Stripe, Linear, Vercel) as HTML/CSS.",
       "platforms": [
         "linux",
@@ -821,6 +839,7 @@
       "skill_name": "songwriting-and-ai-music",
       "category": "creative",
       "frontmatter_name": "songwriting-and-ai-music",
+      "rel": "creative/songwriting-and-ai-music/SKILL.md",
       "description": "Songwriting craft and Suno AI music prompts.",
       "platforms": [
         "linux",
@@ -840,6 +859,7 @@
       "skill_name": "sdlc-review",
       "category": "devops",
       "frontmatter_name": "sdlc-review",
+      "rel": "devops/sdlc-review/SKILL.md",
       "description": "Review Kanban handoffs and route verified outcomes.",
       "platforms": [
         "linux",
@@ -861,6 +881,7 @@
       "skill_name": "email-inbox-triage",
       "category": "email",
       "frontmatter_name": "email-inbox-triage",
+      "rel": "email/email-inbox-triage/SKILL.md",
       "description": "Triage an inbox: prioritize threads, draft replies safely.",
       "platforms": [
         "linux",
@@ -880,6 +901,7 @@
       "skill_name": "himalaya",
       "category": "email",
       "frontmatter_name": "himalaya",
+      "rel": "email/himalaya/SKILL.md",
       "description": "Himalaya CLI: IMAP/SMTP email from terminal.",
       "platforms": [
         "linux",
@@ -899,6 +921,7 @@
       "skill_name": "git-workflow",
       "category": "git-workflow",
       "frontmatter_name": "git-workflow",
+      "rel": "git-workflow/SKILL.md",
       "description": "Git pitfalls: nested repos, staging, identity.",
       "platforms": [],
       "conditions": {
@@ -914,6 +937,7 @@
       "skill_name": "h-dashboard-session",
       "category": "h-dashboard-session",
       "frontmatter_name": "h-dashboard-session",
+      "rel": "h-dashboard-session/SKILL.md",
       "description": "Use when working in h-dashboard repo.",
       "platforms": [
         "linux",
@@ -932,6 +956,7 @@
       "skill_name": "improve",
       "category": "improve",
       "frontmatter_name": "improve",
+      "rel": "improve/SKILL.md",
       "description": "Audit codebases and write implementation plans for others.",
       "platforms": [],
       "conditions": {
@@ -947,6 +972,7 @@
       "skill_name": "gif-search",
       "category": "media",
       "frontmatter_name": "gif-search",
+      "rel": "media/gif-search/SKILL.md",
       "description": "Search/download GIFs from Tenor via curl + jq.",
       "platforms": [
         "linux",
@@ -966,6 +992,7 @@
       "skill_name": "songsee",
       "category": "media",
       "frontmatter_name": "songsee",
+      "rel": "media/songsee/SKILL.md",
       "description": "Audio spectrograms/features (mel, chroma, MFCC) via CLI.",
       "platforms": [
         "linux",
@@ -985,6 +1012,7 @@
       "skill_name": "youtube-content",
       "category": "media",
       "frontmatter_name": "youtube-content",
+      "rel": "media/youtube-content/SKILL.md",
       "description": "YouTube transcripts to summaries, threads, blogs.",
       "platforms": [
         "linux",
@@ -1004,6 +1032,7 @@
       "skill_name": "obsidian",
       "category": "note-taking",
       "frontmatter_name": "obsidian",
+      "rel": "note-taking/obsidian/SKILL.md",
       "description": "Read, search, create, and edit notes in the Obsidian vault.",
       "platforms": [
         "linux",
@@ -1023,6 +1052,7 @@
       "skill_name": "airtable",
       "category": "productivity",
       "frontmatter_name": "airtable",
+      "rel": "productivity/airtable/SKILL.md",
       "description": "Airtable REST API via curl. Records CRUD, filters, upserts.",
       "platforms": [
         "linux",
@@ -1042,6 +1072,7 @@
       "skill_name": "box",
       "category": "productivity",
       "frontmatter_name": "box",
+      "rel": "productivity/box/SKILL.md",
       "description": "Box manages cloud files, sharing, search, and metadata.",
       "platforms": [
         "linux",
@@ -1061,6 +1092,7 @@
       "skill_name": "collective-wisdom-install",
       "category": "productivity",
       "frontmatter_name": "collective-wisdom-install",
+      "rel": "productivity/collective-wisdom-install/SKILL.md",
       "description": "Browse, install, or share team skills with consent.",
       "platforms": [
         "linux",
@@ -1080,6 +1112,7 @@
       "skill_name": "document-to-action-items",
       "category": "productivity",
       "frontmatter_name": "document-to-action-items",
+      "rel": "productivity/document-to-action-items/SKILL.md",
       "description": "Extract cited obligations, deadlines, tasks from documents.",
       "platforms": [
         "linux",
@@ -1099,6 +1132,7 @@
       "skill_name": "docx",
       "category": "productivity",
       "frontmatter_name": "docx",
+      "rel": "productivity/docx/SKILL.md",
       "description": "Create, read, edit, template, and review Word .docx files.",
       "platforms": [
         "linux",
@@ -1118,6 +1152,7 @@
       "skill_name": "google-workspace",
       "category": "productivity",
       "frontmatter_name": "google-workspace",
+      "rel": "productivity/google-workspace/SKILL.md",
       "description": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Python.",
       "platforms": [
         "linux",
@@ -1137,6 +1172,7 @@
       "skill_name": "maps",
       "category": "productivity",
       "frontmatter_name": "maps",
+      "rel": "productivity/maps/SKILL.md",
       "description": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM.",
       "platforms": [
         "linux",
@@ -1158,6 +1194,7 @@
       "skill_name": "meeting-action-items",
       "category": "productivity",
       "frontmatter_name": "meeting-action-items",
+      "rel": "productivity/meeting-action-items/SKILL.md",
       "description": "Turn meeting notes into cited decisions, owners, tickets.",
       "platforms": [
         "linux",
@@ -1177,6 +1214,7 @@
       "skill_name": "notion",
       "category": "productivity",
       "frontmatter_name": "notion",
+      "rel": "productivity/notion/SKILL.md",
       "description": "Notion API + ntn CLI: pages, databases, markdown, Workers.",
       "platforms": [
         "linux",
@@ -1196,6 +1234,7 @@
       "skill_name": "pdf",
       "category": "productivity",
       "frontmatter_name": "pdf",
+      "rel": "productivity/pdf/SKILL.md",
       "description": "PDF files: create, read, merge, fill, OCR, edit text.",
       "platforms": [
         "linux",
@@ -1215,6 +1254,7 @@
       "skill_name": "powerpoint",
       "category": "productivity",
       "frontmatter_name": "powerpoint",
+      "rel": "productivity/powerpoint/SKILL.md",
       "description": "Create, read, edit .pptx decks with python-pptx.",
       "platforms": [
         "linux",
@@ -1234,6 +1274,7 @@
       "skill_name": "product-price-monitor",
       "category": "productivity",
       "frontmatter_name": "product-price-monitor",
+      "rel": "productivity/product-price-monitor/SKILL.md",
       "description": "Watch product, flight, or listing prices; alert on target.",
       "platforms": [
         "linux",
@@ -1253,6 +1294,7 @@
       "skill_name": "teams-meeting-pipeline",
       "category": "productivity",
       "frontmatter_name": "teams-meeting-pipeline",
+      "rel": "productivity/teams-meeting-pipeline/SKILL.md",
       "description": "Teams meeting summaries, job replay, Graph subscriptions.",
       "platforms": [
         "linux",
@@ -1275,6 +1317,7 @@
       "skill_name": "weekly-review-planning",
       "category": "productivity",
       "frontmatter_name": "weekly-review-planning",
+      "rel": "productivity/weekly-review-planning/SKILL.md",
       "description": "Weekly reset: commitments, stalled work, next-week plan.",
       "platforms": [
         "linux",
@@ -1294,6 +1337,7 @@
       "skill_name": "xlsx",
       "category": "productivity",
       "frontmatter_name": "xlsx",
+      "rel": "productivity/xlsx/SKILL.md",
       "description": "Create, read, edit Excel .xlsx workbooks and CSVs.",
       "platforms": [
         "linux",
@@ -1313,6 +1357,7 @@
       "skill_name": "arxiv",
       "category": "research",
       "frontmatter_name": "arxiv",
+      "rel": "research/arxiv/SKILL.md",
       "description": "Search arXiv papers by keyword, author, category, or ID.",
       "platforms": [
         "linux",
@@ -1332,6 +1377,7 @@
       "skill_name": "competitor-news-monitor",
       "category": "research",
       "frontmatter_name": "competitor-news-monitor",
+      "rel": "research/competitor-news-monitor/SKILL.md",
       "description": "Watch named companies for material news; cited digests.",
       "platforms": [
         "linux",
@@ -1351,6 +1397,7 @@
       "skill_name": "grounded-citations",
       "category": "research",
       "frontmatter_name": "grounded-citations",
+      "rel": "research/grounded-citations/SKILL.md",
       "description": "Ground answers and documents in cited, verifiable sources.",
       "platforms": [
         "linux",
@@ -1370,6 +1417,7 @@
       "skill_name": "llm-wiki",
       "category": "research",
       "frontmatter_name": "llm-wiki",
+      "rel": "research/llm-wiki/SKILL.md",
       "description": "Karpathy's LLM Wiki: build/query interlinked markdown KB.",
       "platforms": [
         "linux",
@@ -1389,6 +1437,7 @@
       "skill_name": "rss-feeds",
       "category": "research",
       "frontmatter_name": "rss-feeds",
+      "rel": "research/rss-feeds/SKILL.md",
       "description": "Read RSS, Atom, JSON feeds; discover feeds behind a page.",
       "platforms": [
         "linux",
@@ -1408,6 +1457,7 @@
       "skill_name": "reddit-reading",
       "category": "social-media",
       "frontmatter_name": "reddit-reading",
+      "rel": "social-media/reddit-reading/SKILL.md",
       "description": "Read Reddit: subreddits, search, threads, users. No browser.",
       "platforms": [
         "linux",
@@ -1427,6 +1477,7 @@
       "skill_name": "xurl",
       "category": "social-media",
       "frontmatter_name": "xurl",
+      "rel": "social-media/xurl/SKILL.md",
       "description": "X/Twitter via xurl CLI: raw post search, posting, DM, media.",
       "platforms": [
         "linux",
@@ -1445,6 +1496,7 @@
       "skill_name": "agent-docs-audit",
       "category": "software-development",
       "frontmatter_name": "agent-docs-audit",
+      "rel": "software-development/agent-docs-audit/SKILL.md",
       "description": "Audit AGENTS.md/CLAUDE.md against real code.",
       "platforms": [],
       "conditions": {
@@ -1460,6 +1512,7 @@
       "skill_name": "codebase-inspection",
       "category": "software-development",
       "frontmatter_name": "codebase-inspection",
+      "rel": "software-development/codebase-inspection/SKILL.md",
       "description": "Inspect codebases w/ pygount: LOC, languages, ratios.",
       "platforms": [
         "linux",
@@ -1479,6 +1532,7 @@
       "skill_name": "docs-claims-audit",
       "category": "software-development",
       "frontmatter_name": "docs-claims-audit",
+      "rel": "software-development/docs-claims-audit/SKILL.md",
       "description": "Audit project docs against recent commits.",
       "platforms": [],
       "conditions": {
@@ -1494,6 +1548,7 @@
       "skill_name": "dogfood",
       "category": "software-development",
       "frontmatter_name": "dogfood",
+      "rel": "software-development/dogfood/SKILL.md",
       "description": "Exploratory QA of web apps: find bugs, evidence, reports.",
       "platforms": [
         "linux",
@@ -1513,6 +1568,7 @@
       "skill_name": "github-discussions",
       "category": "software-development",
       "frontmatter_name": "github-discussions",
+      "rel": "software-development/github-discussions/SKILL.md",
       "description": "Use when posting or reading GitHub Discussions.",
       "platforms": [],
       "conditions": {
@@ -1528,6 +1584,7 @@
       "skill_name": "github",
       "category": "software-development",
       "frontmatter_name": "github",
+      "rel": "software-development/github/SKILL.md",
       "description": "GitHub via gh CLI: PRs, issues, reviews, repos, auth.",
       "platforms": [
         "linux",
@@ -1547,6 +1604,7 @@
       "skill_name": "hermes-agent-skill-authoring",
       "category": "software-development",
       "frontmatter_name": "hermes-agent-skill-authoring",
+      "rel": "software-development/hermes-agent-skill-authoring/SKILL.md",
       "description": "Author in-repo SKILL.md files: frontmatter and structure.",
       "platforms": [
         "linux",
@@ -1566,6 +1624,7 @@
       "skill_name": "improve-workflows",
       "category": "software-development",
       "frontmatter_name": "improve-workflows",
+      "rel": "software-development/improve-workflows/SKILL.md",
       "description": "Audit plan-writing and issue registration workflows.",
       "platforms": [],
       "conditions": {
@@ -1581,6 +1640,7 @@
       "skill_name": "inspecting-hermes-desktop-dom",
       "category": "software-development",
       "frontmatter_name": "inspecting-hermes-desktop-dom",
+      "rel": "software-development/inspecting-hermes-desktop-dom/SKILL.md",
       "description": "Read the live Hermes desktop DOM/CSS over CDP.",
       "platforms": [
         "linux",
@@ -1600,6 +1660,7 @@
       "skill_name": "laravel-patterns",
       "category": "software-development",
       "frontmatter_name": "laravel-patterns",
+      "rel": "software-development/laravel-patterns/SKILL.md",
       "description": "Laravel pitfalls: model events, cache batching, factories.",
       "platforms": [],
       "conditions": {
@@ -1615,6 +1676,7 @@
       "skill_name": "node-inspect-debugger",
       "category": "software-development",
       "frontmatter_name": "node-inspect-debugger",
+      "rel": "software-development/node-inspect-debugger/SKILL.md",
       "description": "Debug Node.js via --inspect + Chrome DevTools Protocol CLI.",
       "platforms": [
         "linux",
@@ -1634,6 +1696,7 @@
       "skill_name": "python-debugpy",
       "category": "software-development",
       "frontmatter_name": "python-debugpy",
+      "rel": "software-development/python-debugpy/SKILL.md",
       "description": "Debug Python: pdb REPL + debugpy remote (DAP).",
       "platforms": [
         "linux",
@@ -1652,6 +1715,7 @@
       "skill_name": "read-the-damn-docs",
       "category": "software-development",
       "frontmatter_name": "read-the-damn-docs",
+      "rel": "software-development/read-the-damn-docs/SKILL.md",
       "description": "Read official docs before using third-party APIs or libs.",
       "platforms": [],
       "conditions": {
@@ -1667,6 +1731,7 @@
       "skill_name": "requesting-code-review",
       "category": "software-development",
       "frontmatter_name": "requesting-code-review",
+      "rel": "software-development/requesting-code-review/SKILL.md",
       "description": "Pre-commit review: security scan, quality gates, auto-fix.",
       "platforms": [
         "linux",
@@ -1686,6 +1751,7 @@
       "skill_name": "simplify-code",
       "category": "software-development",
       "frontmatter_name": "simplify-code",
+      "rel": "software-development/simplify-code/SKILL.md",
       "description": "Parallel 4-agent cleanup of recent code changes.",
       "platforms": [
         "linux",
@@ -1705,6 +1771,7 @@
       "skill_name": "spike",
       "category": "software-development",
       "frontmatter_name": "spike",
+      "rel": "software-development/spike/SKILL.md",
       "description": "Throwaway experiments to validate an idea before build.",
       "platforms": [
         "linux",
@@ -1724,6 +1791,7 @@
       "skill_name": "systematic-debugging",
       "category": "software-development",
       "frontmatter_name": "systematic-debugging",
+      "rel": "software-development/systematic-debugging/SKILL.md",
       "description": "4-phase root cause debugging: understand bugs before fixing.",
       "platforms": [
         "linux",
@@ -1743,6 +1811,7 @@
       "skill_name": "test-driven-development",
       "category": "software-development",
       "frontmatter_name": "test-driven-development",
+      "rel": "software-development/test-driven-development/SKILL.md",
       "description": "TDD: enforce RED-GREEN-REFACTOR, tests before code.",
       "platforms": [
         "linux",
@@ -1762,6 +1831,7 @@
       "skill_name": "blocked-page-recovery",
       "category": "web",
       "frontmatter_name": "blocked-page-recovery",
+      "rel": "web/blocked-page-recovery/SKILL.md",
       "description": "Use when a fetch fails: 403/429, paywall, WAF, bot wall.",
       "platforms": [
         "linux",
