@@ -116,14 +116,14 @@
     "first_seen_at": null,
     "last_patched_at": "2026-10-03T10:29:23.706889+00:00",
     "last_reused_patch_generation": 4,
-    "last_used_at": "2026-10-04T08:33:24.471353+00:00",
-    "last_viewed_at": "2026-10-04T08:33:24.470044+00:00",
+    "last_used_at": "2026-10-04T18:57:48.971811+00:00",
+    "last_viewed_at": "2026-10-04T18:57:48.970692+00:00",
     "patch_count": 4,
     "patch_generation": 4,
     "pinned": false,
     "state": "active",
-    "use_count": 13,
-    "view_count": 13
+    "use_count": 14,
+    "view_count": 14
   },
   "hermes-agent": {
     "archived_at": null,
