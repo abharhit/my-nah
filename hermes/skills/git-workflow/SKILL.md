@@ -83,6 +83,19 @@ Three responses, in order of preference:
 
 **Do not `git rebase` onto the divergent remote to "fix" a non-fast-forward.** If the local branch carries many upstream commits, the rebase replays all of them and conflicts on whichever doc or lockfile those commits touched. `git rebase --abort` restores state exactly; the branch you started from is still there.
 
+## Syncing a Local Branch to Exactly Match an Upstream Ref
+
+When the user wants a fork/branch to be identical to an upstream URL (wipe local divergence, drop extra files), reset hard to the fetched upstream ref, clean untracked files, then force-push. Preserve `.env*` with `-e` exclusions on the clean.
+
+```bash
+git fetch https://github.com/<upstream>/<repo>.git beta:refs/remotes/upstream/beta
+git reset --hard upstream/beta
+git clean -fdx -e .env -e .env.*
+git push --force origin HEAD:refs/heads/<branch>
+```
+
+Always confirm with the user before `reset --hard` / force-push — both destroy uncommitted work and remote commits. Verify afterwards with matching hashes: `git rev-parse HEAD upstream/beta` and `git ls-remote origin <branch>`.
+
 ## Is A Commit Actually On The Base Branch?
 
 `git log <base>` showing a commit, or a commit sitting in your branch's history, does **not** mean the base branch contains it. A commit can reach your branch through a merge from a fork while the base took a different route.

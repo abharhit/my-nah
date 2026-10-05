@@ -57,6 +57,46 @@ Subagents over-report. Three failure classes to check:
 
 Always open the cited code yourself before including a finding in the vetted table. Downgrade or reject accordingly.
 
+## Posting an expert review on an audit issue
+
+When asked for an opinion ("نظر کارشناسی") on an already-filed audit issue, the comment must be
+independently verified — never a paraphrase of the issue body. Procedure:
+
+1. Pull the full issue: `gh issue view N --repo owner/repo --json number,title,body,comments`.
+   (`--comments` and `--json` are mutually exclusive; `--json comments` is the one that lets
+   you read the thread programmatically. A machine-filed audit body is the claim list to check,
+   not ground truth.)
+2. Re-verify **every cited line** against the working tree: `sed -n 'X,Yp' file` for each cited
+   range, plus a negative grep for the claimed-absent symbol (`grep -c 'authorize\|Gate::' file`).
+   Confirm the one-liners that carry the argument (route gate, API gate, policy directory
+   listing) rather than spot-checking one.
+3. **Generalize the finding before commenting**: grep sibling files for the same pattern
+   (`for f in …; do grep -c … $f; done`). A pattern that recurs across a whole domain is a
+   stronger finding than the single component the issue names, and it changes the fix from one
+   `authorize()` to a shared follow-up. Put it under a distinct heading so it doesn't read as
+   agreement-with-embellishment.
+4. Look for the gaps between layers: read-side vs write-side permission drift; an update branch
+   that validates the stored value instead of the submitted one; UI controls rendered without a
+   `@can`; a pivot/cache write that makes the mutation authorization-relevant rather than mere
+   data entry. These are the details worth adding. Restate the issue's own bullets only to
+   confirm them.
+5. Post with `gh issue comment N --repo owner/repo --body-file /tmp/issue_comment.md`, writing
+   the body via a shell heredoc quoted with `'EOF'`. Inline `--body` breaks on backticks, `$`,
+   and code fences in the markdown.
+6. End with a verdict line (confirmed / partially / rejected) plus severity, and leave any open
+   question as an explicit follow-up offer rather than burying it mid-thread.
+
+Match the comment's language to the issue body's language; status replies to the user stay in
+the user's language.
+
+### Pitfalls
+
+- **Do not agree with an unverified audit issue.** The body reads authoritative but every
+  line-number citation is a claim; one wrong citation in an "expert review" poisons the whole
+  comment. Verify first, then praise.
+- **Do not cite a file you did not open.** Same rule as plan-writing below: every line reference
+  in the comment must come from a `sed`/`grep` in that session.
+
 ## Writing a plan the executor cannot misread
 
 A plan containing a method that does not exist is worse than a plan with a gap: the executor writes to the invented name and the failure surfaces far from the plan. **Every identifier in a plan must come from a grep or a read in the same session.**
@@ -114,7 +154,7 @@ The `tracker.json` schema:
       "slug": "short-slug",
       "title": "Plan title",
       "category": "security",
-      "effort": "M",
+      "effort": "S",
       "impact": "high",
       "done": false,
       "plan_file": "plans/001-short-slug.md",

@@ -50,7 +50,69 @@
       "workdir": "/home/runner/h-dashboard",
       "run_claim": null,
       "fire_claim": null
+    },
+    {
+      "id": "a757bffae52a",
+      "name": "h-dashboard — بررسی ایشوهای جدید و ثبت نظر",
+      "prompt": "You review NEW GitHub issues on `asgarimehdi/h-dashboard` and post exactly one expert-review comment under each, to the same standard as the reviews already on #805, #806 and #809 — read one of them first with `gh issue view 809 --repo asgarimehdi/h-dashboard --comments` to match the format and the level of verification.\n\nENVIRONMENT\n- Repo: /home/runner/h-dashboard (current branch `nahal`). Canonical upstream: `asgarimehdi/h-dashboard`, branch `beta`. Read `AGENTS.md` in that repo first and keep it in context — it is authoritative.\n- `gh` is authenticated (account `abharhit`). Your own past comments are authored by `abharhit`.\n- A monitor script injects a deterministic list of ALL issues, one line each: `#N STATE ISO_CREATED_AT title`, plus a diff against the previous run. `continuity` also gives you this job's own previous output. Use both to dedupe.\n- Tool notes: use `terminal` for `gh`/`grep`/`sed`; `read_file`/`search_files` for source. For a numeric claim, reproduce it — small temporary PHP probes that boot `bootstrap/app.php` are allowed, but delete them afterwards and never write to the database.\n\nWHAT COUNTS AS NEW\n- An issue qualifies only if its `createdAt` is within the last 3 HOURS (confirm with `gh issue view <n> --json createdAt,title,state`) AND no comment by `abharhit` already exists on it (`gh issue view <n> --comments`).\n- If the diff was caused only by a state change, closure, or title edit — or nothing qualifies — do not comment on anything. Reply with one Persian line and stop.\n- Pull requests sometimes appear in issue listings; skip anything with a PR.\n\nPER QUALIFYING ISSUE\n1. `gh issue view <n> --repo asgarimehdi/h-dashboard --json number,title,state,body,createdAt` — read the whole body.\n2. VERIFY BEFORE WRITING. Open every file and line the issue cites; confirm or refute each claim. Where it states a count, percentage, or query result, reproduce it with a read-only check. Line numbers that have drifted are worth calling out; a claim you cannot reproduce must be reported as such, never repeated.\n3. Write the review in English, in the established structure: opening line starting `Expert review —`; `## Verdict`; verified line references; `## Corrections` / `## Additional observations` for anything the issue got wrong, missed, or understated; a concrete `## Recommended plan`; `## Effort`; and `## Not verified` for anything you did not check. Correcting the original author is expected and is the bar set by the #806 and #809 reviews. Be direct, no padding, do not restate the issue back.\n4. Post it: write the body to `/tmp/issue<n>_comment.md`, then `gh issue comment <n> --repo asgarimehdi/h-dashboard --body-file /tmp/issue<n>_comment.md`, and confirm the URL it returns. One comment per issue, ever.\n5. Prefer `## Not verified` over guessing. Never fabricate a line number or a measurement.\n\nHARD LIMITS\n- Read-only on the repository: no commits, no pushes, no PRs, no closing/reopening issues, no labels or assignees, no edits to any tracked file. `git status` must be clean when you finish.\n- Never run `scripts/e2e-test.sh`. Never edit `.env`. Never add or remove git remotes.\n- Delete every temporary file you create outside `/tmp/issue<n>_comment.md`.\n\nFINAL ANSWER to the user — Persian, 2-4 lines: which issues received a comment (with their URLs), one short line per issue on the verdict; or the single line `ایشو جدیدی نبود.` when nothing qualified.",
+      "skills": [
+        "github",
+        "h-dashboard-session"
+      ],
+      "skill": "github",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "monitor_script": null,
+      "monitor_url": null,
+      "monitor_state": null,
+      "context_from": [
+        "self"
+      ],
+      "schedule": {
+        "kind": "interval",
+        "minutes": 30,
+        "display": "every 30m"
+      },
+      "schedule_display": "every 30m",
+      "repeat": {
+        "times": null,
+        "completed": 2
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-10-05T19:11:51.048079+00:00",
+      "next_run_at": "2026-10-05T21:44:51.104874+00:00",
+      "last_run_at": "2026-10-05T21:14:51.104874+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "last_delivery_unverified": null,
+      "last_failure": null,
+      "failure_streak": 0,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "100651143",
+        "chat_name": "M A",
+        "thread_id": null,
+        "user_id": "100651143",
+        "scope_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": "/home/runner/h-dashboard",
+      "last_dispatch": {
+        "scheduled_at": "2026-10-05T20:50:37.741420+00:00",
+        "dispatched_at": "2026-10-05T20:50:56.267522+00:00",
+        "lateness_seconds": 18.5,
+        "kind": "on_time"
+      },
+      "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-28T21:43:09.200267+00:00"
+  "updated_at": "2026-10-05T21:14:51.105697+00:00"
 }
