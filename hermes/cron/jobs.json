@@ -28,24 +28,24 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 16
+        "completed": 19
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-10-05T19:11:51.048079+00:00",
-      "next_run_at": "2026-10-06T08:54:56.021824+00:00",
-      "last_run_at": "2026-10-06T06:52:19.101645+00:00",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-10-06T13:59:53.211102+00:00",
+      "last_run_at": "2026-10-06T13:29:53.211102+00:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 503: All fusion panel models failed",
       "last_delivery_error": null,
       "last_delivery_unverified": null,
       "last_failure": {
-        "at": "2026-10-06T01:33:46.303894+00:00",
+        "at": "2026-10-06T13:29:53.211102+00:00",
         "detail": "RuntimeError: HTTP 503: All fusion panel models failed"
       },
-      "failure_streak": 0,
+      "failure_streak": 1,
       "deliver": "origin",
       "origin": {
         "platform": "telegram",
@@ -58,21 +58,80 @@
       "enabled_toolsets": null,
       "workdir": "/home/runner/h-dashboard",
       "last_dispatch": {
-        "scheduled_at": "2026-10-06T08:23:56.021188+00:00",
-        "dispatched_at": "2026-10-06T08:24:56.017450+00:00",
-        "lateness_seconds": 60.0,
+        "scheduled_at": "2026-10-06T13:15:10.414584+00:00",
+        "dispatched_at": "2026-10-06T13:15:10.950297+00:00",
+        "lateness_seconds": 0.5,
         "kind": "on_time"
       },
-      "fire_claim": {
-        "at": "2026-10-06T08:52:56.876563+00:00",
-        "by": "runnervm8df0l:19627:dfc3417cf6474f40b712003da2e4c02f"
+      "fire_claim": null
+    },
+    {
+      "id": "261aff3cc0a9",
+      "name": "afshun-check-h-dashboard",
+      "prompt": "تو نگهبان ایشو برای مخزن asgarimehdi/h-dashboard هستی. هر 30 دقیقه اجرا میشود.\n\nمهارتی که بارگذاری شده: superpowers:systematic-debugging. برای هر ایشوی جدید دقیقاً از فرایند چهارفازی آن پیروی کن: (۱) تحقیق ریشه با شواهد، (۲) الگویابی در کد، (۳) فرضیه و آزمینه کوچک، (۴) بعد راه حل. هیچ راه حل یا نظری بدون شواهد ریشه ای نده.\n\nمرحله ۱ — وضعیت قبلی: فایل /home/runner/.hermes/cron/output/afshun-seen.json را بخوان. اگر نبود بسازش؛ ساختارش یک شیء seen است که کلیدش شماره ایشو و مقدارش تاریخ بازبینی به صورت ISO است. اگر بود، شماره ها را نگه دار و تاریخ ها را به روز کن.\n\nمرحله ۲ — ایشوهای باز: در /home/runner/h-dashboard اجرا کن:\ngh issue list -R asgarimehdi/h-dashboard --state open --limit 100 --json number,title,createdAt,labels,body\n\nمرحله ۳ — تفاوت گیری: هر ایشویی که شماره اش در فایل قبلی نبوده جدید است. فقط روی ایشوهای جدید کار کن.\n\nمرحله ۴ — کارشناسی با سوپرپاور (فقط ایشوهای جدید): برای هر ایشوی جدید:\n- بدنه کامل و کامنت هایش را بخوان: gh issue view <n> -R asgarimehdi/h-dashboard --comments\n- ریشه را در کد پیدا کن: مسیرها و کلاس های نام برده در ایشو را در /home/runner/h-dashboard باز کن و خط دقیق را پیدا کن.\n- ببین قبلاً حل شده یا نه: git log --oneline -300 و در صورت نیاز git log -S با کلیدواژه ایشو؛ شاهد حل شدن را با هش کامیت بنویس.\n- الگوی مشابه کارا در همان کد را پیدا کن و تفاوت را بگو (فاز ۲ سیستماتیک).\n- برای هر ادعایی شواهد بنویس: مسیر فایل و خط، یا هش کامیت. ادعای بدون شواهد ممنوع.\n\nمرحله ۵ — ثبت نتیجه:\n- نظر کارشناسی را به صورت کامنت زیر هر ایشو در گیت هاب ثبت کن:\ngh issue comment <n> -R asgarimehdi/h-dashboard --body \"<متن نظر>\"\n- متن کامنت این ساختار را داشته باشد (فارسی، مستقیم، بدون تعارف):\n  ریسک: ...\n  ریشه با شواهد: فایل:خط یا کامیت\n  وضعیت: هنوز باقی است یا قبلاً در <هش> حل شده\n  نظر با دلیل: چرا این نظر را میدهم، پیشنهاد راه حل در یک خط، اولویت: فوری / بعد از کار جاری / بی اهمیت\n  (امضا: بررسی خودکار نهال)\n- همه شماره های باز را در seen بنویس و فایل را ذخیره کن.\n\nقواعد خروجی نهایی:\n- اگر ایشوی جدید نبود، پاسخ نهایی را کاملاً خالی بگذار تا هیچ پیامی ارسال نشود.\n- اگر ایشوی جدید بود، فقط یک پیام خلاصه به کاربر بده: تعداد ایشو، شماره ها، و اینکه نظر کارشناسی زیر هر ایشو در گیت هاب ثبت شد. خود بررسی کامل زیر هر ایشو نوشته میشود، پس در پیام تلگرام تکرارش نکن.\n- اگر ایشوی جدیدی قبلاً حل شده بود، در همان کامنت گیت هاب پیشنهاد بده ایشو بسته شود.\n- کار را فقط با ابزارهای terminal و file انجام بده.\n- این run فقط یک بار اجرا میشود؛ کرون جاب تازه نساز و دستورش را عوض نکن.",
+      "skills": [
+        "superpowers:systematic-debugging"
+      ],
+      "skill": "superpowers:systematic-debugging",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "monitor_script": null,
+      "monitor_url": null,
+      "monitor_state": null,
+      "context_from": [
+        "self"
+      ],
+      "schedule": {
+        "kind": "interval",
+        "minutes": 30,
+        "display": "every 30m"
       },
-      "pending_slot": {
-        "scheduled_at": "2026-10-06T08:23:56.021188+00:00",
-        "at": "2026-10-06T08:24:56.017450+00:00",
-        "by": "runnervm8df0l:19627"
+      "schedule_display": "every 30m",
+      "repeat": {
+        "times": null,
+        "completed": 4
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-10-06T10:08:00.595465+00:00",
+      "next_run_at": "2026-10-06T14:01:12.797371+00:00",
+      "last_run_at": "2026-10-06T13:31:12.797371+00:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 503: All fusion panel models failed",
+      "last_delivery_error": null,
+      "last_delivery_unverified": null,
+      "last_failure": {
+        "at": "2026-10-06T13:31:12.797371+00:00",
+        "detail": "RuntimeError: HTTP 503: All fusion panel models failed"
+      },
+      "failure_streak": 1,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "100651143",
+        "chat_name": "M A",
+        "thread_id": null,
+        "user_id": "100651143",
+        "scope_id": null
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file"
+      ],
+      "workdir": "/home/runner/h-dashboard",
+      "fire_claim": null,
+      "last_dispatch": {
+        "scheduled_at": "2026-10-06T13:02:10.964893+00:00",
+        "dispatched_at": "2026-10-06T13:03:10.950466+00:00",
+        "lateness_seconds": 60.0,
+        "kind": "on_time"
       }
     }
   ],
-  "updated_at": "2026-10-06T08:52:56.877112+00:00"
+  "updated_at": "2026-10-06T13:31:12.798117+00:00"
 }
