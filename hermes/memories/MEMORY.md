@@ -12,5 +12,4 @@ scripts/e2e-test.sh: not concurrency-safe, no trap — never run two instances; 
 §
 .env is gitignored; rebuild from `.env-example-github` + secrets in `.env.e2e`, override APP_URL=http://127.0.0.1:8000 and DB_DATABASE=h_dashboard, drop `secrets.` lines, verify `php artisan about --only=environment`. parse_ini_file('.env') fails (unquoted parens) — regex scan or config() instead.
 §
-Map perf fixed (adc561f): bottleneck was main-thread rendering, not server (longtask /map pan 620→52ms). Fixed: circleMarker+lazy popup, icon cache, id-Map/memo depth, canvas lines, dead Livewire loadStats removed.
-
+Map perf fixed (adc561f): main-thread rendering. Cron wake-gate must print {"wakeAgent": false} as LAST stdout line (bare token ignored). Issue-review job 391997173a5b gates on: no abharhit comment AND no reviewed/ready label. abharhit has pull:true only on upstream (triage:false) so label writes 403 — the comment is the state marker, never the label.

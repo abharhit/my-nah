@@ -1,25 +1,24 @@
 {
   "jobs": [
     {
-      "id": "a757bffae52a",
-      "name": "h-dashboard — بررسی ایشوهای جدید و ثبت نظر",
-      "prompt": "You review NEW GitHub issues on `asgarimehdi/h-dashboard` and post exactly one expert-review comment under each, to the same standard as the reviews already on #805, #806 and #809 — read one of them first with `gh issue view 809 --repo asgarimehdi/h-dashboard --comments` to match the format and the level of verification.\n\nENVIRONMENT\n- Repo: /home/runner/h-dashboard (current branch `nahal`). Canonical upstream: `asgarimehdi/h-dashboard`, branch `beta`. Read `AGENTS.md` in that repo first and keep it in context — it is authoritative.\n- `gh` is authenticated (account `abharhit`). Your own past comments are authored by `abharhit`.\n- A monitor script injects a deterministic list of ALL issues, one line each: `#N STATE ISO_CREATED_AT title`, plus a diff against the previous run. `continuity` also gives you this job's own previous output. Use both to dedupe.\n- Tool notes: use `terminal` for `gh`/`grep`/`sed`; `read_file`/`search_files` for source. For a numeric claim, reproduce it — small temporary PHP probes that boot `bootstrap/app.php` are allowed, but delete them afterwards and never write to the database.\n\nWHAT COUNTS AS NEW\n- An issue qualifies only if its `createdAt` is within the last 3 HOURS (confirm with `gh issue view <n> --json createdAt,title,state`) AND no comment by `abharhit` already exists on it (`gh issue view <n> --comments`).\n- If the diff was caused only by a state change, closure, or title edit — or nothing qualifies — do not comment on anything. Reply with one Persian line and stop.\n- Pull requests sometimes appear in issue listings; skip anything with a PR.\n\nPER QUALIFYING ISSUE\n1. `gh issue view <n> --repo asgarimehdi/h-dashboard --json number,title,state,body,createdAt` — read the whole body.\n2. VERIFY BEFORE WRITING. Open every file and line the issue cites; confirm or refute each claim. Where it states a count, percentage, or query result, reproduce it with a read-only check. Line numbers that have drifted are worth calling out; a claim you cannot reproduce must be reported as such, never repeated.\n3. Write the review in English, in the established structure: opening line starting `Expert review —`; `## Verdict`; verified line references; `## Corrections` / `## Additional observations` for anything the issue got wrong, missed, or understated; a concrete `## Recommended plan`; `## Effort`; and `## Not verified` for anything you did not check. Correcting the original author is expected and is the bar set by the #806 and #809 reviews. Be direct, no padding, do not restate the issue back.\n4. Post it: write the body to `/tmp/issue<n>_comment.md`, then `gh issue comment <n> --repo asgarimehdi/h-dashboard --body-file /tmp/issue<n>_comment.md`, and confirm the URL it returns. One comment per issue, ever.\n5. Prefer `## Not verified` over guessing. Never fabricate a line number or a measurement.\n\nHARD LIMITS\n- Read-only on the repository: no commits, no pushes, no PRs, no closing/reopening issues, no labels or assignees, no edits to any tracked file. `git status` must be clean when you finish.\n- Never run `scripts/e2e-test.sh`. Never edit `.env`. Never add or remove git remotes.\n- Delete every temporary file you create outside `/tmp/issue<n>_comment.md`.\n\nFINAL ANSWER to the user — Persian, 2-4 lines: which issues received a comment (with their URLs), one short line per issue on the verdict; or the single line `ایشو جدیدی نبود.` when nothing qualified.",
+      "id": "391997173a5b",
+      "name": "h-dashboard issue review (labels)",
+      "prompt": "You are the expert issue reviewer for `asgarimehdi/h-dashboard` (Laravel health dashboard, Persian/RTL, Livewire 4, MaryUI, PostgreSQL+PostGIS). The gate script above already filtered the feed: every issue it listed is OPEN, has NEITHER the `reviewed` NOR the `ready` label, and has NO comment from you (`abharhit`). Review every one of them.\n\nENVIRONMENT\n- Repo checkout: /home/runner/h-dashboard (branch `nahal`, fork `abharhit/h-dashboard`). Canonical upstream: `asgarimehdi/h-dashboard`, branch `beta`. Read the repo `AGENTS.md` first and keep it in context, it is authoritative.\n- `gh` is authenticated as `abharhit`; your comments are authored by `abharhit`.\n- Match the standard of the reviews already on #806, #809, #833, #840: `gh issue view 833 --repo asgarimehdi/h-dashboard --comments` shows the expected format and verification depth.\n- Use only the terminal and file tools. For numeric claims, reproduce them with read-only probes (small PHP scripts that boot `bootstrap/app.php` are allowed; delete them afterwards, never write to the database).\n\nPROCESS (per issue, systematic-debugging discipline)\n1. Read the whole thread first: `gh issue view <n> --repo asgarimehdi/h-dashboard --comments`. If a comment by `abharhit` appeared since the gate ran, skip that issue — one comment per issue, ever.\n2. Verify every claim against the checked-out code: open each cited file and line; confirm claimed ABSENCES with search; check `git log --oneline -300 -- <file>` and `git log -S'<symbol>'` for prior fixes; find the repo own fix pattern in a sibling component and cite it as the template. Line drift is worth calling out. A claim you cannot reproduce must be reported as such, never repeated.\n3. Write the review in English: opening verdict line; risk with severity; root cause with `file:line` or commit-hash evidence; corrections to anything the issue got wrong or understated; a concrete recommended plan with effort; a not-verified section for anything unchecked. Be direct, no padding, do not restate the issue. Correcting the author is expected, that is the bar set by #806/#809/#833.\n4. Post it: write the body to `/tmp/issue<n>_comment.md`, then `gh issue comment <n> --repo asgarimehdi/h-dashboard --body-file /tmp/issue<n>_comment.md`, and confirm the returned URL. Re-read the issue comments afterwards to prove it landed.\n5. Add the label: `gh issue edit <n> --repo asgarimehdi/h-dashboard --add-label reviewed`, then verify with `gh issue view <n> --json labels`. A 403 here is EXPECTED — this token has only `pull: true` on the upstream repo, no triage permission. It is not a failure: do not retry, do not treat the run as failed, and do not mention it in the issue comment. The comment itself is what stops the gate from picking the issue up again.\n\nHARD LIMITS\n- Read-only on the repository: no commits, no pushes, no PRs, no closing/reopening, no removing labels, no assignees, no edits to tracked files. `git status` must be clean when you finish.\n- Never run `scripts/e2e-test.sh`. Never edit `.env`. Never add/rename/delete git remotes.\n- Only ever ADD the `reviewed` label. Never add `ready` yourself.\n- Delete every temp file except the `/tmp/issue<n>_comment.md` you posted.\n\nFINAL ANSWER (the only thing delivered to chat): one Persian line per issue — number, one-line verdict, comment URL, and one word saying whether the label landed or hit the expected 403. If nothing qualified after re-checking, reply exactly `[SILENT]`.",
       "skills": [
+        "superpowers:systematic-debugging",
         "github",
         "h-dashboard-session"
       ],
-      "skill": "github",
+      "skill": "superpowers:systematic-debugging",
       "model": null,
       "provider": null,
       "base_url": null,
-      "script": null,
+      "script": "h-dashboard-issue-gate.sh",
       "no_agent": false,
       "monitor_script": null,
       "monitor_url": null,
       "monitor_state": null,
-      "context_from": [
-        "self"
-      ],
+      "context_from": null,
       "schedule": {
         "kind": "interval",
         "minutes": 30,
@@ -28,24 +27,24 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 19
+        "completed": 5
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
-      "created_at": "2026-10-05T19:11:51.048079+00:00",
-      "next_run_at": "2026-10-06T13:59:53.211102+00:00",
-      "last_run_at": "2026-10-06T13:29:53.211102+00:00",
-      "last_status": "error",
-      "last_error": "RuntimeError: HTTP 503: All fusion panel models failed",
+      "created_at": "2026-10-06T16:05:05.839618+00:00",
+      "next_run_at": "2026-10-06T19:41:14.380959+00:00",
+      "last_run_at": "2026-10-06T18:42:17.680386+00:00",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "last_delivery_unverified": null,
       "last_failure": {
-        "at": "2026-10-06T13:29:53.211102+00:00",
-        "detail": "RuntimeError: HTTP 503: All fusion panel models failed"
+        "at": "2026-10-06T16:17:46.953126+00:00",
+        "detail": "اجرا ناقص ماند: هر دو کامنت مرور منتشر شد، اما **هیچ‌کدام از هشت لیبل `reviewed` زده نشد** — چون `abharhit` روی مخزن upstream دسترسی نوشتن لیبل ندارد. وضعیت پایانی: `git status` تمیز است (فقط `M package-lock.json` از قبل).\n\n**مانع: ۴۰۳ روی نوشتن لیبل (نه روی کامنت)**\n\n```\ngh issue edit 840 --add-label reviewed\n→ GraphQL: abharhit does not have the correct permissions\n  to execute `AddLabelsToLabelable`\n\ngh api -X POST repos/asgarimehdi/h-dashboard/issues/840/labels\n→ {\"message\":\"Must have admin rights to Repository.\",\"status\":\"403\"}\n\ngh api repos/asgarimehdi/h-dashboard --jq .permissions\n→ {\"admin\":false,\"maintain\":false,\"pull\":true,\"push\":false,\"triage\":false}\n```\n\n`gh issue view` و `gh issue comment` کار می‌کنند چون `pull: true` کافی است؛ نوشتن لیبل `triage` می‌خواهد و آن صفر است. `gh issue list --label reviewed --state all` هم هیچ رکوردی برنمی‌گرداند — یعنی این برچسب **هرگز** زده نشده، پس گیت cron هر دور همین هشت ایشو را دوباره می‌دهد. تا وقتی توکن دسترسی `triage`/`push` نداشته باشد، این چرخه تکرار می‌شود.\n\n**آنچه انجام شد**\n\n- #840 — بازتولید شد: توکن نقشه واقعاً `abilities=[\"*\"]` می‌گیرد و `POST /api/hardware` را با ۲۰۱ رد می‌کند. یک ادعای ایشو اصلاح شد: «توکن از خروج بیرون می‌ماند» از آرتیفاکت پروب آمده بود (هدر Bearer بین درخواست‌های تست باقی می‌ماند)؛ پس از پاک‌کردن guard و نشست، توکن باز هم ۲۰۰ می‌دهد، ولی ریشه‌اش نبودِ `tokens()->delete()` نیست — پنجرهٔ ۲۴ ساعتهٔ `config/sanctum.php:61` است. نکتهٔ تازه: `mount()` در هر بازدید صفحه توکن تازه می‌سازد، پس با دو تب توکن اول باطل می‌شود و نقشه لایه‌هایش خطا می‌دهد.\n  https://github.com/asgarimehdi/h-dashboard/issues/840#issuecomment-6020487291\n- #842 — بازتولید شد: `updateHardware` با `n_code` واحد دیگر بدون خطا قبول شد و رکورد از واحد ۱ به ۲ رفت؛ همان `PUT` از API ۴۰۳ می‌گیرد. ریشهٔ تاریخی روشن شد: `05f3085` (ایشوی #201) فقط `createHardware` را محدود کرد و `updateHardware` را جا گذاشت.\n  https://github.com/asgarimehdi/h-dashboard/issues/842#issuecomment-6020506418\n- #827، #828، #829، #830، #831، #833 — هر شش کامنت `abharhit` را از قبل داشتند؛ طبق دستور هیچ کامنت جدیدی نوشته نشد، فقط لیبل که آن هم با خطای ۴۰۳ مواجه شد.\n\n**گام بعدی:** به `abharhit` روی `asgarimehdi/h-dashboard` حداقل دسترسی `triage` بدهید (یا برچسب `reviewed` را از راه حسابی با دسترسی مدیریت بزنید)، وگرنه این cron در هر اجرا همین هشت ایشو را تکرار می‌کند. هر هشت کامنت لازم موجود است و آمادهٔ برچسب‌خوردن‌اند."
       },
-      "failure_streak": 1,
+      "failure_streak": 0,
       "deliver": "origin",
       "origin": {
         "platform": "telegram",
@@ -57,81 +56,17 @@
       },
       "enabled_toolsets": null,
       "workdir": "/home/runner/h-dashboard",
+      "fire_claim": {
+        "at": "2026-10-06T19:33:14.973286+00:00",
+        "by": "runnervmmprz5:19751:e7ce40b056464903ad440fdee009eab6"
+      },
       "last_dispatch": {
-        "scheduled_at": "2026-10-06T13:15:10.414584+00:00",
-        "dispatched_at": "2026-10-06T13:15:10.950297+00:00",
-        "lateness_seconds": 0.5,
-        "kind": "on_time"
-      },
-      "fire_claim": null
-    },
-    {
-      "id": "261aff3cc0a9",
-      "name": "afshun-check-h-dashboard",
-      "prompt": "تو نگهبان ایشو برای مخزن asgarimehdi/h-dashboard هستی. هر 30 دقیقه اجرا میشود.\n\nمهارتی که بارگذاری شده: superpowers:systematic-debugging. برای هر ایشوی جدید دقیقاً از فرایند چهارفازی آن پیروی کن: (۱) تحقیق ریشه با شواهد، (۲) الگویابی در کد، (۳) فرضیه و آزمینه کوچک، (۴) بعد راه حل. هیچ راه حل یا نظری بدون شواهد ریشه ای نده.\n\nمرحله ۱ — وضعیت قبلی: فایل /home/runner/.hermes/cron/output/afshun-seen.json را بخوان. اگر نبود بسازش؛ ساختارش یک شیء seen است که کلیدش شماره ایشو و مقدارش تاریخ بازبینی به صورت ISO است. اگر بود، شماره ها را نگه دار و تاریخ ها را به روز کن.\n\nمرحله ۲ — ایشوهای باز: در /home/runner/h-dashboard اجرا کن:\ngh issue list -R asgarimehdi/h-dashboard --state open --limit 100 --json number,title,createdAt,labels,body\n\nمرحله ۳ — تفاوت گیری: هر ایشویی که شماره اش در فایل قبلی نبوده جدید است. فقط روی ایشوهای جدید کار کن.\n\nمرحله ۴ — کارشناسی با سوپرپاور (فقط ایشوهای جدید): برای هر ایشوی جدید:\n- بدنه کامل و کامنت هایش را بخوان: gh issue view <n> -R asgarimehdi/h-dashboard --comments\n- ریشه را در کد پیدا کن: مسیرها و کلاس های نام برده در ایشو را در /home/runner/h-dashboard باز کن و خط دقیق را پیدا کن.\n- ببین قبلاً حل شده یا نه: git log --oneline -300 و در صورت نیاز git log -S با کلیدواژه ایشو؛ شاهد حل شدن را با هش کامیت بنویس.\n- الگوی مشابه کارا در همان کد را پیدا کن و تفاوت را بگو (فاز ۲ سیستماتیک).\n- برای هر ادعایی شواهد بنویس: مسیر فایل و خط، یا هش کامیت. ادعای بدون شواهد ممنوع.\n\nمرحله ۵ — ثبت نتیجه:\n- نظر کارشناسی را به صورت کامنت زیر هر ایشو در گیت هاب ثبت کن:\ngh issue comment <n> -R asgarimehdi/h-dashboard --body \"<متن نظر>\"\n- متن کامنت این ساختار را داشته باشد (فارسی، مستقیم، بدون تعارف):\n  ریسک: ...\n  ریشه با شواهد: فایل:خط یا کامیت\n  وضعیت: هنوز باقی است یا قبلاً در <هش> حل شده\n  نظر با دلیل: چرا این نظر را میدهم، پیشنهاد راه حل در یک خط، اولویت: فوری / بعد از کار جاری / بی اهمیت\n  (امضا: بررسی خودکار نهال)\n- همه شماره های باز را در seen بنویس و فایل را ذخیره کن.\n\nقواعد خروجی نهایی:\n- اگر ایشوی جدید نبود، پاسخ نهایی را کاملاً خالی بگذار تا هیچ پیامی ارسال نشود.\n- اگر ایشوی جدید بود، فقط یک پیام خلاصه به کاربر بده: تعداد ایشو، شماره ها، و اینکه نظر کارشناسی زیر هر ایشو در گیت هاب ثبت شد. خود بررسی کامل زیر هر ایشو نوشته میشود، پس در پیام تلگرام تکرارش نکن.\n- اگر ایشوی جدیدی قبلاً حل شده بود، در همان کامنت گیت هاب پیشنهاد بده ایشو بسته شود.\n- کار را فقط با ابزارهای terminal و file انجام بده.\n- این run فقط یک بار اجرا میشود؛ کرون جاب تازه نساز و دستورش را عوض نکن.",
-      "skills": [
-        "superpowers:systematic-debugging"
-      ],
-      "skill": "superpowers:systematic-debugging",
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": null,
-      "no_agent": false,
-      "monitor_script": null,
-      "monitor_url": null,
-      "monitor_state": null,
-      "context_from": [
-        "self"
-      ],
-      "schedule": {
-        "kind": "interval",
-        "minutes": 30,
-        "display": "every 30m"
-      },
-      "schedule_display": "every 30m",
-      "repeat": {
-        "times": null,
-        "completed": 4
-      },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-10-06T10:08:00.595465+00:00",
-      "next_run_at": "2026-10-06T14:01:12.797371+00:00",
-      "last_run_at": "2026-10-06T13:31:12.797371+00:00",
-      "last_status": "error",
-      "last_error": "RuntimeError: HTTP 503: All fusion panel models failed",
-      "last_delivery_error": null,
-      "last_delivery_unverified": null,
-      "last_failure": {
-        "at": "2026-10-06T13:31:12.797371+00:00",
-        "detail": "RuntimeError: HTTP 503: All fusion panel models failed"
-      },
-      "failure_streak": 1,
-      "deliver": "origin",
-      "origin": {
-        "platform": "telegram",
-        "chat_id": "100651143",
-        "chat_name": "M A",
-        "thread_id": null,
-        "user_id": "100651143",
-        "scope_id": null
-      },
-      "enabled_toolsets": [
-        "terminal",
-        "file"
-      ],
-      "workdir": "/home/runner/h-dashboard",
-      "fire_claim": null,
-      "last_dispatch": {
-        "scheduled_at": "2026-10-06T13:02:10.964893+00:00",
-        "dispatched_at": "2026-10-06T13:03:10.950466+00:00",
-        "lateness_seconds": 60.0,
+        "scheduled_at": "2026-10-06T18:41:17.727041+00:00",
+        "dispatched_at": "2026-10-06T18:42:16.714418+00:00",
+        "lateness_seconds": 59.0,
         "kind": "on_time"
       }
     }
   ],
-  "updated_at": "2026-10-06T13:31:12.798117+00:00"
+  "updated_at": "2026-10-06T19:33:14.973820+00:00"
 }
