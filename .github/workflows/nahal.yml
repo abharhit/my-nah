@@ -1,10 +1,9 @@
 name: nahal
 
 on:
+  schedule:
+    - cron: '0 */6 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - nahal
 
 jobs:
   build:
