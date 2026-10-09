@@ -12,4 +12,4 @@ scripts/e2e-test.sh: not concurrency-safe, no trap — never run two instances; 
 §
 .env is gitignored; rebuild from `.env-example-github` + secrets in `.env.e2e`, override APP_URL=http://127.0.0.1:8000 and DB_DATABASE=h_dashboard, drop `secrets.` lines, verify `php artisan about --only=environment`. parse_ini_file('.env') fails (unquoted parens) — regex scan or config() instead.
 §
-Map perf fixed (adc561f): main-thread rendering. Cron wake-gate must print {"wakeAgent": false} as LAST stdout line (bare token ignored). Issue-review job 391997173a5b gates on: no abharhit comment AND no reviewed/ready label. abharhit has pull:true only on upstream (triage:false) so label writes 403 — the comment is the state marker, never the label.
+Issue-review job 391997173a5b's gate script lives at /home/runner/.hermes/scripts/h-dashboard-issue-gate.sh (recreated 2026-10-08) — cron resolves `script` ONLY inside HERMES_HOME/scripts. A missing gate never errors: last_status stays ok, agent re-filters by hand every tick. Issue-review job 391997173a5b gates on

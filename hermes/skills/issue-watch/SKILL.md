@@ -33,7 +33,7 @@ Record: repo `owner/name`, branch the verdicts are judged against, the definitio
 
 ### 2. Gate script (wake-gate, not a seen-file diff)
 
-Write `~/.hermes/scripts/<watch-slug>-gate.sh` that lists qualifying issues via `gh issue list -R <repo> --state open --limit 100 --json number,title,createdAt,labels,comments`, filters with jq, and prints either the deterministic list (wake the agent) or `printf '{"wakeAgent": false}\n'` as the LAST non-empty stdout line (skip the agent entirely — no LLM, no delivery). Pass it as the job's `script`. A `gh` failure must exit non-zero with a loud error, never mimic the silent case.
+Write `~/.hermes/scripts/<watch-slug>-gate.sh` that lists qualifying issues via `gh issue list -R <repo> --state open --limit 100 --json number,title,createdAt,labels,comments`, filters with jq, and prints either the deterministic list (wake the agent) or `printf '{"wakeAgent": false}\n'` as the LAST non-empty stdout line (skip the agent entirely — no LLM, no delivery). Pass it as the job's `script`. A `gh` failure must exit non-zero with a loud error, never mimic the silent case. Then VERIFY the file is really there — a job imported, hand-edited, or restored from `jobs.json` can name a `script` that was never written to disk. `_resolve_script_path` (`cron/scheduler_script.py`) only looks inside `HERMES_HOME/scripts/`, refuses any path that escapes it, and returns `Script not found: <path>` otherwise. A missing gate is not loud: `last_status` stays `ok`, the agent simply wakes, re-derives the filter by hand every tick, and reports the missing script as an "environment defect" to chat. After creating the job, assert resolution with the real function.
 
 ### 3. Create the job
 
@@ -48,7 +48,7 @@ Set `workdir` to the repo, `enabled_toolsets` to what the tick needs (e.g. `[ter
 
 ### 4. Test before trusting it
 
-Run the gate script directly against both states (a real new issue, and the all-reviewed state) and assert the filter against synthetic fixtures covering: brand-new, my-comment-present, `reviewed` label, `ready` label, unrelated-label-only, third-party-comment-only. Then fire `cronjob(action="run")` once and confirm the run lands where the gate said it would. Without this, the first scheduled tick floods the chat with every historical issue or silently never wakes.
+Run the gate script directly against both states (a real new issue, and the all-reviewed state) and assert the filter against synthetic fixtures covering: brand-new, my-comment-present, `reviewed` label, `ready` label, unrelated-label-only, third-party-comment-only. Assert the scheduler's own parser, not your reading of it — extract `_parse_wake_gate` from `cron/scheduler_prompt.py` with a regex and `exec` it (importing `cron.scheduler_prompt` pulls in ruamel and fails); the gate must be the LAST non-empty line, so a flag printed above a list still wakes. Then fire `cronjob(action="run")` once and confirm the run lands where the gate said it would. Without this, the first scheduled tick floods the chat with every historical issue or silently never wakes.
 
 ## Procedure — Tick (each scheduled run)
 
@@ -77,6 +77,7 @@ Run the gate script directly against both states (a real new issue, and the all-
 
 ## Verification
 
+- [ ] Gate script exists on disk at `HERMES_HOME/scripts/<slug>-gate.sh` AND `_resolve_script_path(job["script"])` returns a path (a "job configured, script absent" mismatch is the defect that survives every other check here).
 - [ ] Gate tested against both states: a real new issue wakes, an all-reviewed queue prints `{"wakeAgent": false}`.
 - [ ] Filter asserted against synthetic fixtures (new / commented / labeled / third-party-comment) — not just eyeballed.
 - [ ] One manual `run` landed exactly where the gate predicted.
