@@ -2,7 +2,7 @@ For h-dashboard PRs: user says 'pr' → create PR from current branch to upstrea
 §
 Every new session: default cwd is /home/runner/h-dashboard, and always use CodeGraph (`codegraph sync` first; codegraph_explore for code Q&A) + superpowers skills + read-the-damn-docs (web_search official docs) before acting; shadcn/improve for h-dashboard audits only on request.
 §
-Boost MCP occasionally dies on first stdio call ("lost its stdio subprocess") — just call it again. CLI fallback always works: php scripts/boost_tool.php <tool> '<json>'.
+Boost MCP occasionally dies on first stdio call ("lost its stdio subprocess") — call it again. CLI fallback always works: php scripts/boost_tool.php <tool> '<json>'.
 §
 h-dashboard branch nahal tracks origin/beta (branch.nahal.merge=refs/heads/beta), so `git status` shows 'nahal...origin/beta'; always use explicit refspecs HEAD:refs/heads/nahal.
 §
@@ -12,4 +12,4 @@ scripts/e2e-test.sh: not concurrency-safe, no trap — never run two instances; 
 §
 .env is gitignored; rebuild from `.env-example-github` + secrets in `.env.e2e`, override APP_URL=http://127.0.0.1:8000 and DB_DATABASE=h_dashboard, drop `secrets.` lines, verify `php artisan about --only=environment`. parse_ini_file('.env') fails (unquoted parens) — regex scan or config() instead.
 §
-Issue-review job 391997173a5b's gate script lives at /home/runner/.hermes/scripts/h-dashboard-issue-gate.sh (recreated 2026-10-08) — cron resolves `script` ONLY inside HERMES_HOME/scripts. A missing gate never errors: last_status stays ok, agent re-filters by hand every tick. Issue-review job 391997173a5b gates on
+Issue-review cron 391997173a5b: gate script = ~/.hermes/scripts/h-dashboard-issue-gate.sh (cron resolves `script` only under HERMES_HOME/scripts); missing it never errors. Rebuilt 2026-10-09: prints JSON array of open NON-PR issues lacking reviewed+ready and lacking an abharhit comment.
