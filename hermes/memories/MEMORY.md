@@ -1,6 +1,6 @@
 For h-dashboard PRs: user says 'pr' → create PR from current branch to upstream/beta (asgarimehdi/h-dashboard). All changes commit+push to current branch.
 §
-Every new session: default cwd is /home/runner/h-dashboard, and always use CodeGraph (`codegraph sync` first; codegraph_explore for code Q&A) + superpowers skills + read-the-damn-docs (web_search official docs) before acting; shadcn/improve for h-dashboard audits only on request.
+Every new session: cwd /home/runner/h-dashboard; `codegraph sync` first, then codegraph_explore for code Q&A; load superpowers process skills.
 §
 Boost MCP occasionally dies on first stdio call ("lost its stdio subprocess") — call it again. CLI fallback always works: php scripts/boost_tool.php <tool> '<json>'.
 §
@@ -12,4 +12,4 @@ scripts/e2e-test.sh: not concurrency-safe, no trap — never run two instances; 
 §
 .env is gitignored; rebuild from `.env-example-github` + secrets in `.env.e2e`, override APP_URL=http://127.0.0.1:8000 and DB_DATABASE=h_dashboard, drop `secrets.` lines, verify `php artisan about --only=environment`. parse_ini_file('.env') fails (unquoted parens) — regex scan or config() instead.
 §
-Issue-review cron 391997173a5b: gate script = ~/.hermes/scripts/h-dashboard-issue-gate.sh (cron resolves `script` only under HERMES_HOME/scripts); missing it never errors. Rebuilt 2026-10-09: prints JSON array of open NON-PR issues lacking reviewed+ready and lacking an abharhit comment.
+Issue-review cron 391997173a5b: gate = ~/.hermes/scripts/h-dashboard-issue-gate.sh — copy from the issue-watch skill's templates/issue-gate.sh; rebuild it when a tick reports 'Script not found'.
