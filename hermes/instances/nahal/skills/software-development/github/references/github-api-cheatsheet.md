@@ -127,6 +127,49 @@ Most list endpoints support:
 - `?page=2` for next page
 - Check `Link` header for `rel="next"` URL
 
+## GraphQL API (for endpoints not in REST)
+
+Some operations — notably **Discussions** — are only available via GraphQL.
+
+### Common GraphQL Mutations
+
+```graphql
+# Add comment to a Discussion
+mutation AddDiscussionComment($discussionId: ID!, $body: String!) {
+  addDiscussionComment(input: {discussionId: $discussionId, body: $body}) {
+    comment { id body }
+  }
+}
+```
+
+### Calling GraphQL with gh CLI
+
+```bash
+# gh api graphql -f query='...' -F discussionId=... -F body=... 
+gh api graphql -f query='mutation($discussionId: ID!, $body: String!) { addDiscussionComment(input: {discussionId: $discussionId, body: $body}) { comment { id } } }' \
+  -F discussionId="D_kwDOOLHV784AqBu8" \
+  -F body="Comment text"
+```
+
+### Calling GraphQL with curl
+
+```bash
+curl -s -X POST -H "Authorization: token $GITHUB_TOKEN" \
+  -H "Content-Type: application/json" \
+  https://api.github.com/graphql \
+  -d '{"query": "mutation($discussionId: ID!, $body: String!) { addDiscussionComment(input: {discussionId: $discussionId, body: $body}) { comment { id } } }", "variables": {"discussionId": "D_kwDOOLHV784AqBu8", "body": "Comment text"}}'
+```
+
+### Finding Discussion IDs
+
+Discussion IDs are GraphQL node IDs (not the number). Get them via:
+```bash
+# Get discussion node ID from number
+curl -s -H "Authorization: token $GITHUB_TOKEN" \
+  https://api.github.com/repos/{owner}/{repo}/discussions/{number} \
+  | jq -r '.node_id'
+```
+
 ## Rate Limits
 
 - Authenticated: 5,000 requests/hour

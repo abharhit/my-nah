@@ -242,6 +242,28 @@ gh auth status
 
 ---
 
+### Using the GitHub MCP Server (mcp__github__*)
+
+The GitHub MCP server (`github` in `manage_connections` with `mcp: true`) is a **stdio server** that authenticates via the `GITHUB_TOKEN` environment variable — it does **not** use OAuth or the `gh` CLI credential store.
+
+**Setup:**
+```bash
+export GITHUB_TOKEN="<personal-access-token-with-repo-scope>"
+```
+
+Then enable the server:
+```bash
+manage_connections action=enable connectors=[{"name": "github", "mcp": true}]
+```
+
+**Verification:** The tools `mcp__github__add_issue_comment`, `mcp__github__create_pull_request`, etc. will be available and authenticated.
+
+> **PITFALL:** If `GITHUB_TOKEN` is not set in the environment where Hermes runs, the MCP server will start but all tool calls will fail with `Authentication Failed: Requires authentication`. This is not an OAuth flow — there is no browser login. The token must be in the **process environment** (the shell/session where Hermes is running), not just in a `.env` file.
+
+> **PITFALL:** The MCP server and `gh` CLI use separate auth stores. `gh auth status` may show authenticated while the MCP server fails, or vice versa. Always verify the auth method required by your tool path.
+
+---
+
 ## Using the GitHub API Without gh
 
 When `gh` is not available, you can still access the full GitHub API using `curl` with a personal access token. This is how the other GitHub skills implement their fallbacks.

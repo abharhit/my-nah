@@ -30,6 +30,7 @@ starting that workflow, the body below only routes.
 | Carry an ISSUE to a verified PR (full delivery loop) | `references/issue-to-pr.md` |
 | Review someone's PR: diffs, inline comments, verdict | `references/code-review.md` |
 | Clone/create/fork repos, remotes, releases | `references/repo-management.md` |
+| **GitHub Discussions: read/write comments, categories** | `references/github-api-cheatsheet.md` (GraphQL section) |
 
 Supporting assets: `scripts/gh-env.sh` + `scripts/git-credential-token.py`
 (auth helpers), `templates/` (PR bodies, bug report, feature request),
@@ -40,6 +41,8 @@ Supporting assets: `scripts/gh-env.sh` + `scripts/git-credential-token.py`
 
 - Preflight once per session: `gh auth status` — if it fails, go to
   `references/auth.md` before anything else.
+- **Discussions require GraphQL** — REST API returns 404; use `gh api graphql`
+  or the cheatsheet's GraphQL examples.
 - Prefer `gh` over raw REST; drop to `gh api` only for endpoints the
   porcelain lacks (the cheatsheet lists them).
 - Never report CI green without checking `gh pr checks` yourself; never
