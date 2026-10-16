@@ -14,7 +14,7 @@ Don't use for: reviewing an existing PR, or answering a code question with no re
 
 ### 1. Read the live issue — body AND full thread
 
-Use `terminal` to run `gh issue view <N> --comments`. The body is a snapshot from filing time; the newest comments carry the live state: partial fixes already merged, new root-cause analyses, maintainer decisions, or questions directed at you that change the task. Also read repository instructions (`AGENTS.md`, contribution docs) with `read_file`. Done when the currently requested behavior, non-goals, and any unanswered thread questions are known.
+Use `terminal` to run `gh issue view <N> --comments`. The body is a snapshot from filing time; the newest comments carry the live state: partial fixes already merged, new root-cause analyses, maintainer decisions, or questions directed at you that change the task. A status/decision comment can also redefine the whole task class — e.g. "the fix already shipped in PR X; verify it against this decision, do not reimplement" — so resolve which task you were actually given before touching code, and let comments win wherever they conflict with the body. Also read repository instructions (`AGENTS.md`, contribution docs) with `read_file`. Done when the currently requested behavior, non-goals, and any unanswered thread questions are known.
 
 ### 2. Sweep for existing and duplicate work
 

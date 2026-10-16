@@ -20,15 +20,31 @@
     "created_at": "2026-10-14T15:43:28.976957+00:00",
     "created_by": null,
     "first_seen_at": null,
-    "last_patched_at": "2026-10-14T15:51:09.760188+00:00",
+    "last_patched_at": "2026-10-16T11:17:05.240950+00:00",
     "last_reused_patch_generation": 4,
-    "last_used_at": "2026-10-14T15:51:31.456597+00:00",
-    "last_viewed_at": "2026-10-14T15:51:31.455344+00:00",
-    "patch_count": 4,
-    "patch_generation": 4,
+    "last_used_at": "2026-10-16T11:16:17.138301+00:00",
+    "last_viewed_at": "2026-10-16T11:16:17.137062+00:00",
+    "patch_count": 8,
+    "patch_generation": 8,
     "pinned": false,
     "state": "active",
-    "use_count": 8,
-    "view_count": 8
+    "use_count": 12,
+    "view_count": 12
+  },
+  "superpowers:requesting-code-review": {
+    "archived_at": null,
+    "created_at": "2026-10-16T10:58:49.961140+00:00",
+    "created_by": null,
+    "first_seen_at": null,
+    "last_patched_at": null,
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-10-16T10:58:49.962358+00:00",
+    "last_viewed_at": "2026-10-16T10:58:49.961154+00:00",
+    "patch_count": 0,
+    "patch_generation": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
   }
 }

@@ -155,7 +155,6 @@ for f in json.load(sys.stdin):
 This works with plain `git` — no `gh` needed:
 
 ```bash
-# Fetch the PR branch and check it out
 git fetch origin pull/123/head:pr-123
 git checkout pr-123
 
@@ -164,6 +163,8 @@ git checkout pr-123
 # View diff against the base branch
 git diff main...pr-123
 ```
+
+`pull/N/head` is served by the repo HOSTING the PR, not by your fork — when origin is your own fork and the PR lives upstream, `git fetch origin pull/N/head` fails with "couldn't find remote ref"; fetch by the upstream URL instead: `git fetch https://github.com/<owner>/<repo>.git pull/$PR_NUMBER/head:pr-$PR_NUMBER`.
 
 **With gh (shortcut):**
 
@@ -359,6 +360,8 @@ git fetch origin pull/$PR_NUMBER/head:pr-$PR_NUMBER
 git checkout pr-$PR_NUMBER
 ```
 
+If that fetch 404s with "couldn't find remote ref", the PR head lives in the upstream repo while origin is a fork — fetch by the upstream URL (see section 2, "Check Out PR Locally").
+
 ### Step 4: Read the diff and understand changes
 
 ```bash
@@ -466,3 +469,13 @@ git branch -D pr-$PR_NUMBER
 - **Approve** — no critical or warning-level issues, only minor suggestions or all clear
 - **Request Changes** — any critical or warning-level issue that should be fixed before merge
 - **Comment** — observations and suggestions, but nothing blocking (use when you're unsure or the PR is a draft)
+
+### Decision-Anchored Verification Review (review-only dispatch)
+
+A handoff may point at an already-open PR and a governing decision (a status comment on the issue, a review thread) and say "verify the PR against this decision — do not reimplement". Then the review IS the deliverable: touch no code, and the decision comment wins over the issue body wherever they conflict.
+
+1. Derive the checklist one row per claim from the decision comment itself, not from the issue body; add the scope gates the dispatcher set (no unrelated files, no lockfile churn, docs untouched unless explicitly requested).
+2. Verify every factual claim in the PR body against the real files — open each referenced path and line with `search_files`/`read_file` (defaults and line numbers quoted in PR bodies rot fast).
+3. Grep doc surfaces (`AGENTS.md`, README, docs/) for assertions the diff falsifies even though it never touches them — removing an option or renaming a command invalidates prose like "the commands all take `--dry-run`". A doc line that starts lying on merge is a warning-level finding; give the owner a concrete replacement sentence instead of editing docs unprompted.
+4. Re-run `gh pr checks $PR_NUMBER` immediately before writing the verdict: long checks (E2E, mutation suites) show `pending` at first glance and finish minutes later, so a verdict transcribed from an earlier snapshot or from the handoff text misreports CI; separate non-blocking/labeled checks from the required set in the verdict.
+5. Post one review card written against the decision, then verify it landed: `gh pr review $PR_NUMBER --approve|--request-changes|--comment --body-file <file>`, confirmed by `gh pr view $PR_NUMBER --json reviews` showing your state. Hand merge, label, and issue-closing to the dispatcher — a verification reviewer only reports findings.
