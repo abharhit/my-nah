@@ -51,6 +51,12 @@ Supporting assets: `scripts/gh-env.sh` + `scripts/git-credential-token.py`
   `gh pr view --comments` — decisions live in threads, not titles.
 - Sweep for duplicates before creating anything:
   `gh pr list --search` / `gh issue list --search`.
+- **Large or multilingual markdown payloads go straight through `gh`.** Long PR bodies with
+  non-ASCII text that fail tool-call JSON validation 2x with misleading errors
+  ('calls is not valid JSON' / "requires a 'name'") are a serialization problem, not an
+  argument problem — stop re-serializing and run the equivalent `gh` command instead
+  (`gh pr create --draft --title … --body '…' --repo OWNER/repo --head fork-owner:branch`).
+  Report the escape once and move on; do not keep editing the JSON payload.
 
 ## Verification
 
