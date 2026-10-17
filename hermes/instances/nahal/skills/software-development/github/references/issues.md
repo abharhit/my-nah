@@ -225,6 +225,20 @@ curl -s -X POST \
 gh issue comment 42 --body "Investigated — root cause is in auth middleware. Working on a fix."
 ```
 
+Use `--body-file <path>` for any body longer than a few lines or containing non-ASCII/RTL text.
+
+**Multi-agent race protocol** — when more than one agent/process may comment the same queue of issues, always re-check the issue's comment count **immediately before** posting and skip if it is no longer zero:
+
+```bash
+c=$(gh api repos/$OWNER/$REPO/issues/42 --jq '.comments'); # ground truth
+[ "$c" = "0" ] && gh issue comment 42 --body-file body.md
+```
+
+- The issue endpoint's `comments` field is the authoritative count — prefer it over parsing the comments list.
+- **Never** write `--jq 'length'` against `gh issue view --json comments`: the bare `length` counts the top-level JSON object's keys and returns a small plausible number that silently breaks zero-vs-one checks. Dot-prefix is mandatory: `.comments | length`.
+- Long non-ASCII bodies drafted in one shot can leave garbled tokens. Read the temp body file back end-to-end before posting and fix wording in place rather than regenerating the draft — half-fixed text in a public comment looks worse than none.
+- `gh issue list --json comments` returns the comments as a **list of objects**, not a count: use `len(i['comments'])` in Python; there is no `.comments.totalCount` on that shape (only the issue endpoint carries the integer count).
+
 **With curl:**
 
 ```bash
