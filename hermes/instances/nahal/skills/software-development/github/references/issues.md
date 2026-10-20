@@ -237,6 +237,8 @@ c=$(gh api repos/$OWNER/$REPO/issues/42 --jq '.comments'); # ground truth
 - The issue endpoint's `comments` field is the authoritative count — prefer it over parsing the comments list.
 - **Never** write `--jq 'length'` against `gh issue view --json comments`: the bare `length` counts the top-level JSON object's keys and returns a small plausible number that silently breaks zero-vs-one checks. Dot-prefix is mandatory: `.comments | length`.
 - Long non-ASCII bodies drafted in one shot can leave garbled tokens. Read the temp body file back end-to-end before posting and fix wording in place rather than regenerating the draft — half-fixed text in a public comment looks worse than none.
+- Apply wording repairs to a non-ASCII body as ONE scripted pass (a small Python list of exact old→new string replacements over the body file), then re-read the whole file once. Chained sed expressions with RTL/multibyte strings keep failing on quoting and each partial fix-read-fix round exposes a new artifact — one pass, one readback.
+- **Queue pacing**: re-check each issue's comment count right before starting that issue's deep dive, not once for the whole queue at task start. On a contested queue another agent can claim issues in the gap; analysis effort keyed to a stale zero-count is spent for nothing (the pre-draft check is worth doing only if posting follows within minutes).
 - `gh issue list --json comments` returns the comments as a **list of objects**, not a count: use `len(i['comments'])` in Python; there is no `.comments.totalCount` on that shape (only the issue endpoint carries the integer count).
 
 **With curl:**
